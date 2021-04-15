@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">GW2Helper</string>
+    <string name="title_activity_main_menu">MainMenuActivity</string>
+    <string name="tab_text_1">Tab 1</string>
+    <string name="tab_text_2">Tab 2</string>
+
+    <string name="apiKeyKey">apiKey</string>
+    <string name="apiPreferences">API</string>
+</resources>
