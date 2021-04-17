@@ -1,6 +1,6 @@
 package com.gw2helper
 
-import android.content.Context
+import android.content.Intent
 import android.os.Bundle
 import android.widget.Button
 import android.widget.TextView
@@ -8,14 +8,14 @@ import com.android.volley.Request
 import com.android.volley.toolbox.JsonObjectRequest
 import org.json.JSONObject
 
-class MainActivity : InternetActivity() {
+class LauncherActivity : InternetActivity() {
 
     lateinit var apiInput: TextView
     lateinit var confirmApiKeyButton: Button
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main)
+        setContentView(R.layout.activity_launcher)
 
         apiInput = findViewById(R.id.apiKeyInput)
         confirmApiKeyButton = findViewById(R.id.confirmApiKeyButton)
@@ -46,8 +46,10 @@ class MainActivity : InternetActivity() {
 
     private fun verifyApiKeyHandle(response: JSONObject) {
         // TODO Check for needed permissions
+        // if everything is OK, launch tabbed activity
 
-        ToastsHelper.makeToast("Hi", this)
+        val intent = Intent(this, MainTabbedActivity::class.java)
+        startActivity(intent)
     }
 
 }

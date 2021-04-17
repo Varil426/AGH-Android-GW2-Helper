@@ -6,4 +6,5 @@
 
     <string name="apiKeyKey">apiKey</string>
     <string name="apiPreferences">API</string>
+    <string name="title_activity_main_tabbed">MainTabbedActivity</string>
 </resources>

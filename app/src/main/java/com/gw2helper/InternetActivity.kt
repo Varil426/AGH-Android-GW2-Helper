@@ -7,7 +7,8 @@ import com.android.volley.toolbox.Volley
 
 abstract class InternetActivity : AppCompatActivity() {
 
-    protected lateinit var queue: RequestQueue
+    lateinit var queue: RequestQueue
+        private set
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)

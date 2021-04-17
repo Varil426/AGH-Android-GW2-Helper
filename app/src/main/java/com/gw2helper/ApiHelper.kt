@@ -45,6 +45,7 @@ class ApiHelper private constructor() {
 
         object Endpoints {
             const val tokeninfo = "tokeninfo"
+            const val account = "account"
         }
     }
 
