@@ -6,14 +6,19 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         tools:context=".LauncherActivity" android:background="@color/appBackgroundColor">
+
     <TextView
-            android:text="Please provide GW2 API Key"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content" android:id="@+id/apiKeyMessageTextView"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" app:layout_constraintBottom_toBottomOf="parent"
-            android:textColor="@color/fontWhite" app:layout_constraintVertical_bias="0.25"/>
+        android:id="@+id/apiKeyMessageTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/cagliostro_font"
+        android:text="Please provide GW2 API Key"
+        android:textColor="@color/fontWhite"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.25" />
     <EditText
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -23,11 +28,17 @@
             app:layout_constraintStart_toStartOf="parent" app:layout_constraintEnd_toEndOf="parent"
             android:background="@color/fieldsBackgroundColor" app:layout_constraintTop_toBottomOf="@+id/apiKeyMessageTextView"
             android:layout_marginTop="24dp"/>
+
     <Button
-            android:text="Button"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content" android:id="@+id/confirmApiKeyButton"
-            app:layout_constraintStart_toStartOf="parent" app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/apiKeyInput" android:layout_marginTop="24dp"
-            app:layout_constraintHorizontal_bias="0.498"/>
+        android:id="@+id/confirmApiKeyButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:backgroundTint="#DC423E"
+        android:fontFamily="@font/cagliostro_font"
+        android:text="Log In"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/apiKeyInput" />
 </androidx.constraintlayout.widget.ConstraintLayout>
