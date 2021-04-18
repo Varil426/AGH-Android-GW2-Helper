@@ -2,6 +2,7 @@ package com.gw2helper.tabsFragments
 
 import android.os.Bundle
 import android.view.View
+import android.widget.CheckBox
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
@@ -22,6 +23,7 @@ import kotlin.math.min
 class AchievementsFragment : Fragment(R.layout.fragment_achievements_screen) {
 
     private lateinit var achievementsRecyclerView: RecyclerView
+    private lateinit var onlyFavoritesCheckBox: CheckBox
 
     private val listOfAchievements = mutableListOf<Achievement>()
 
@@ -31,6 +33,9 @@ class AchievementsFragment : Fragment(R.layout.fragment_achievements_screen) {
         achievementsRecyclerView = view.findViewById(R.id.achievementsRecyclerView)
         achievementsRecyclerView.adapter = AchievementsListAdapter(activity!!, listOfAchievements)
         achievementsRecyclerView.layoutManager = LinearLayoutManager(activity!!)
+
+        onlyFavoritesCheckBox = view.findViewById(R.id.onlyFavoritesCheckBox)
+        onlyFavoritesCheckBox.setOnCheckedChangeListener { _, isChecked -> (achievementsRecyclerView.adapter as AchievementsListAdapter)?.filter(isChecked) }
 
         getAchievementsListRequest()
     }

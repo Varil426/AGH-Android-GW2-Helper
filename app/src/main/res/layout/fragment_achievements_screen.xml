@@ -16,12 +16,12 @@
     <CheckBox
             android:text="Only favorites"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content" android:id="@+id/checkBox"
+            android:layout_height="wrap_content" android:id="@+id/onlyFavoritesCheckBox"
             app:layout_constraintEnd_toEndOf="parent" app:layout_constraintTop_toTopOf="parent"
             android:layout_marginEnd="16dp" android:layout_marginTop="16dp"/>
     <androidx.recyclerview.widget.RecyclerView
             android:layout_width="match_parent"
-            android:layout_height="wrap_content" app:layout_constraintTop_toBottomOf="@+id/checkBox"
+            android:layout_height="wrap_content" app:layout_constraintTop_toBottomOf="@+id/onlyFavoritesCheckBox"
             app:layout_constraintStart_toStartOf="parent" app:layout_constraintEnd_toEndOf="parent"
             android:id="@+id/achievementsRecyclerView"/>
 </androidx.constraintlayout.widget.ConstraintLayout>
