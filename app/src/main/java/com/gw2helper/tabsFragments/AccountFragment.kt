@@ -76,13 +76,36 @@ class AccountFragment : Fragment(R.layout.fragment_account_screen) {
         account = Account(name, age, worldId, guilds, access, fractalLevel, wvw_level)
 
         // TODO
-        //getGuildsNamesRequest()
+        val guildsNames = getGuildsNamesRequest(guilds).toString()
+        guildsTextView.text = guildsNames
         //getWorldNameRequest()
 
         nameTextView.text = account.name
         ageTextView.text = ValueConverter.getFormatedDateFromSeconds(account.age)
         fractalLevelTextView.text = account.fractalLevel.toString()
         wvwLevelTextView.text = account.wvwRank.toString()
+    }
+
+    private fun getGuildsNamesRequest(guilds: MutableList<String>): List<String> {
+        val guildsName = mutableListOf<String>()
+        for (index in 0 until guilds.size) {
+            val url = ApiHelper.buildUrl(ApiHelper.endpoints.guild+"/"+guilds[index])
+            val request = JsonObjectRequest(
+                    Request.Method.GET,
+                    url,
+                    null,
+                    {response ->  guildsName.add(loadGuildData(response))},
+                    {error -> ToastsHelper.makeToast(error.toString(), activity!!)}
+            )
+
+            (activity as InternetActivity)?.queue.add(request)
+        }
+        return guildsName
+    }
+
+    private fun loadGuildData(response: JSONObject?): String {
+        val name = response!!.getString("name")
+        return name
     }
 
 }
