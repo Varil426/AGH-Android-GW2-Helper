@@ -15,7 +15,7 @@ class MainTabbedActivity : InternetActivity() {
 
     private class TabsPagerAdapter(fm: FragmentManager) : FragmentStatePagerAdapter(fm) {
 
-        private val tabs = arrayOf(AccountFragment(), CharactersFragment())
+        private val tabs = arrayOf(AccountFragment(), CharactersFragment(), AchievementsFragment())
 
         override fun getCount(): Int {
             return tabs.size
