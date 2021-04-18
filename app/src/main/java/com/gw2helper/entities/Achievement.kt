@@ -5,7 +5,7 @@ data class Achievement(val id: String, val done: Boolean = false, val currentPro
         set(value) {
             if (field == "") {
                 field = value
-            } else {
+            } else if (field != value){
                 throw IllegalArgumentException("Value has been already set")
             }
         }
@@ -14,7 +14,7 @@ data class Achievement(val id: String, val done: Boolean = false, val currentPro
         set(value) {
             if (field == 0) {
                 field = value
-            } else {
+            } else if (field != value) {
                 throw IllegalArgumentException("Value has been already set")
             }
         }
