@@ -5,14 +5,18 @@
                                                    android:layout_height="match_parent">
 
     <TextView
-            android:id="@+id/section_label2"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            tools:layout_constraintTop_creator="1"
-            tools:layout_constraintLeft_creator="1"
-            android:text="Characters"
-            app:layout_constraintTop_toTopOf="parent" app:layout_constraintStart_toStartOf="parent"
-            android:layout_marginTop="16dp"/>
+        android:id="@+id/section_label2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:fontFamily="@font/cagliostro_font"
+        android:text="Characters"
+        android:textSize="18sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:layout_constraintLeft_creator="1"
+        tools:layout_constraintTop_creator="1" />
     <androidx.recyclerview.widget.RecyclerView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
