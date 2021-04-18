@@ -6,10 +6,13 @@ import androidx.viewpager.widget.ViewPager
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentManager
 import androidx.fragment.app.FragmentStatePagerAdapter
+import androidx.room.Room
+import com.gw2helper.persistency.Database
 import com.gw2helper.tabsFragments.AccountFragment
 import com.gw2helper.tabsFragments.AchievementsFragment
 import com.gw2helper.tabsFragments.CharactersFragment
 import java.lang.IndexOutOfBoundsException
+import kotlin.concurrent.thread
 
 class MainTabbedActivity : InternetActivity() {
 
@@ -30,6 +33,12 @@ class MainTabbedActivity : InternetActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main_tabbed)
+
+        PersistedData.loadPersistedData(Room.databaseBuilder(
+            this,
+            Database::class.java, "gw2helper-database"
+        ).build())
+
         val tabsPagerAdapter = TabsPagerAdapter(supportFragmentManager)
         val viewPager: ViewPager = findViewById(R.id.view_pager)
         viewPager.adapter = tabsPagerAdapter
