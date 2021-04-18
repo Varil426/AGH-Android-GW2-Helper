@@ -78,9 +78,9 @@ class CharactersFragment : Fragment(R.layout.fragment_characters_screen) {
         val level = response.getInt("level")
         val deaths = response.getLong("deaths")
 
-        listOfCharacters.add(Character(name, profession, level, age, deaths))
-
-        charactersRecyclerView.adapter!!.notifyDataSetChanged()
+        val character = Character(name, profession, level, age, deaths)
+        listOfCharacters.add(character)
+        charactersRecyclerView.adapter!!.notifyItemChanged(listOfCharacters.indexOf(character))
     }
 
 }
