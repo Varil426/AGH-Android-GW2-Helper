@@ -11,7 +11,7 @@ class ValueConverter {
             val minutes = Math.floor(rest/(60))
             rest -= minutes * (60)
             val seconds = Math.floor(rest)
-            return "Days: $days, Hours: $hours, Minutes: $minutes, Seconds: $seconds"
+            return "Days: ${days.toInt()}, Hours: ${hours.toInt()}, Minutes: ${minutes.toInt()}, Seconds: ${seconds.toInt()}"
         }
     }
 }

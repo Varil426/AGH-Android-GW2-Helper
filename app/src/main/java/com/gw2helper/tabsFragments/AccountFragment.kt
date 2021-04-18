@@ -1,15 +1,15 @@
 package com.gw2helper.tabsFragments
 
+import android.content.Intent
 import android.os.Bundle
+import android.text.method.ScrollingMovementMethod
 import android.view.View
+import android.widget.Button
 import android.widget.TextView
 import androidx.fragment.app.Fragment
 import com.android.volley.Request
 import com.android.volley.toolbox.JsonObjectRequest
-import com.gw2helper.ApiHelper
-import com.gw2helper.InternetActivity
-import com.gw2helper.R
-import com.gw2helper.ToastsHelper
+import com.gw2helper.*
 import com.gw2helper.entities.Account
 import com.gw2helper.utils.ValueConverter
 import org.json.JSONObject
@@ -21,6 +21,7 @@ class AccountFragment : Fragment(R.layout.fragment_account_screen) {
     private lateinit var fractalLevelTextView: TextView
     private lateinit var wvwLevelTextView: TextView
     private lateinit var guildsTextView: TextView
+    private lateinit var logOutButton: Button
 
     private lateinit var account: Account
 
@@ -32,6 +33,10 @@ class AccountFragment : Fragment(R.layout.fragment_account_screen) {
         fractalLevelTextView = view.findViewById(R.id.fractal_level_text_view)
         wvwLevelTextView = view.findViewById(R.id.wvw_level_text_view)
         guildsTextView = view.findViewById(R.id.guilds_text_view)
+        //guildsTextView.movementMethod = ScrollingMovementMethod()
+        logOutButton = view.findViewById(R.id.logout_button)
+
+        logOutButton.setOnClickListener { _ -> ApiHelper.forgetSharedPreferences(context!!) }
 
         getAccountInfoRequest()
     }
