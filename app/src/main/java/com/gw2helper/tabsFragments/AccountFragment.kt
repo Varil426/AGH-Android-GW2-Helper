@@ -11,6 +11,7 @@ import com.gw2helper.InternetActivity
 import com.gw2helper.R
 import com.gw2helper.ToastsHelper
 import com.gw2helper.entities.Account
+import com.gw2helper.utils.ValueConverter
 import org.json.JSONObject
 
 class AccountFragment : Fragment(R.layout.fragment_account_screen) {
@@ -45,8 +46,7 @@ class AccountFragment : Fragment(R.layout.fragment_account_screen) {
             {error -> ToastsHelper.makeToast(error.toString(), activity!!)}
         )
 
-        val myActivity = activity as? InternetActivity
-        myActivity?.queue?.add(request)
+        (activity as InternetActivity)?.queue.add(request)
     }
 
     private fun loadAccountData(response: JSONObject) {
@@ -75,7 +75,7 @@ class AccountFragment : Fragment(R.layout.fragment_account_screen) {
         //getWorldNameRequest()
 
         nameTextView.text = account.name
-        ageTextView.text = account.getFormatedDate()
+        ageTextView.text = ValueConverter.getFormatedDateFromSeconds(account.age)
         fractalLevelTextView.text = account.fractalLevel.toString()
         wvwLevelTextView.text = account.wvwRank.toString()
     }
