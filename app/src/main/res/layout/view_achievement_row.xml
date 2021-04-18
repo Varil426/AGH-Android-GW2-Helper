@@ -14,11 +14,13 @@
 
             <TextView
                     android:layout_width="wrap_content"
+                    android:fontFamily="@font/cagliostro_font"
                     android:layout_height="wrap_content" android:id="@+id/achievementTitleTextView"
                     app:layout_constraintTop_toTopOf="parent" app:layout_constraintStart_toStartOf="parent"
                     android:layout_marginStart="16dp" android:layout_marginTop="16dp"/>
             <CheckBox
                     android:text="Done?"
+                    android:fontFamily="@font/cagliostro_font"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content" android:id="@+id/achievementDoneCheckBox"
                     android:clickable="false"
@@ -34,6 +36,7 @@
                     android:layout_marginStart="16dp" android:layout_marginEnd="16dp"/>
             <TextView
                     android:text="Points:"
+                    android:fontFamily="@font/cagliostro_font"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content" android:id="@+id/achievementPointsLabel"
                     app:layout_constraintTop_toBottomOf="@+id/achievementTitleTextView"
@@ -41,12 +44,14 @@
                     android:layout_marginStart="16dp"/>
             <CheckBox
                     android:text="Add to Favorites?"
+                    android:fontFamily="@font/cagliostro_font"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content" android:id="@+id/achievementAddToFavoritesCheckBox"
                     app:layout_constraintEnd_toEndOf="parent" app:layout_constraintTop_toTopOf="parent"
                     app:layout_constraintBottom_toTopOf="@+id/achivementProgressBar" android:layout_marginEnd="16dp"/>
             <TextView
                     android:layout_width="wrap_content"
+                    android:fontFamily="@font/cagliostro_font"
                     android:layout_height="wrap_content" android:id="@+id/achievementPointsTextView"
                     app:layout_constraintStart_toEndOf="@+id/achievementPointsLabel"
                     app:layout_constraintTop_toBottomOf="@+id/achievementTitleTextView"
