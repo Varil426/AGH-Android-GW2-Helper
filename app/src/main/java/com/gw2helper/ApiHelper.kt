@@ -75,6 +75,7 @@ class ApiHelper private constructor() {
             const val characters = "characters"
             const val accountAchievements = "account/achievements"
             const val achievements = "achievements"
+            const val items = "items"
             const val guild = "guild"
         }
     }
