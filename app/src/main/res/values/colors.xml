@@ -12,4 +12,15 @@
     <color name="fieldsBackgroundColor">#FFFFFF</color>
     <color name="fontWhite">#EAEAEA</color>
     <color name="fontNormal">#232323</color>
+
+    <color name="itemJunk">#AAAAAA</color>
+    <color name="itemFine">#62A4DA</color>
+    <color name="itemMasterwork">#1a9306</color>
+    <color name="itemRare">#fcd00b</color>
+    <color name="itemExotic">#ffa405</color>
+    <color name="itemAscended">#fb3e8d</color>
+    <color name="itemLegendary">#4C139D</color>
+    <color name="itemBasic">#000000</color>
+
+
 </resources>

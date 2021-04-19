@@ -31,6 +31,15 @@ class EquipmentListAdapter(private val context: Context, private val listOfEquip
         val currentEquipment = listOfEquipment[position]
 
         holder.nameTextView.text = currentEquipment.name
+        when(currentEquipment.rarity){
+            "Fine" -> holder.nameTextView.setTextColor(context.resources.getColor(R.color.itemFine))
+            "Masterwork" -> holder.nameTextView.setTextColor(context.resources.getColor(R.color.itemMasterwork))
+            "Rare" -> holder.nameTextView.setTextColor(context.resources.getColor(R.color.itemMasterwork))
+            "Exotic" -> holder.nameTextView.setTextColor(context.resources.getColor(R.color.itemExotic))
+            "Ascended" -> holder.nameTextView.setTextColor(context.resources.getColor(R.color.itemAscended))
+            "Legendary" -> holder.nameTextView.setTextColor(context.resources.getColor(R.color.itemLegendary))
+            else ->  holder.nameTextView.setTextColor(context.resources.getColor(R.color.itemBasic))
+        }
         holder.slotTextView.text = currentEquipment.slot
         holder.levelTextView.text = currentEquipment.level.toString()
 

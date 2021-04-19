@@ -15,6 +15,7 @@
 
             <TextView
                     android:layout_width="wrap_content"
+                    android:fontFamily="@font/cagliostro_font"
                     android:layout_height="wrap_content" android:id="@+id/equipmentNameTextView"
                     app:layout_constraintStart_toStartOf="parent" app:layout_constraintTop_toTopOf="parent"
                     android:layout_marginStart="16dp" android:layout_marginTop="16dp"/>
@@ -27,23 +28,27 @@
                     android:layout_marginStart="16dp" android:layout_marginTop="10dp"/>
             <TextView
                     android:text="Slot:"
+                    android:fontFamily="@font/cagliostro_font"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content" android:id="@+id/equipmentSlotLabel"
                     app:layout_constraintStart_toEndOf="@+id/equipmentIconImageView" android:layout_marginStart="16dp"
                     app:layout_constraintTop_toTopOf="parent" android:layout_marginTop="40dp"/>
             <TextView
                     android:text="Level:"
+                    android:fontFamily="@font/cagliostro_font"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content" android:id="@+id/equipmentLevelLabel"
                     app:layout_constraintStart_toEndOf="@+id/equipmentIconImageView" android:layout_marginStart="16dp"
                     android:layout_marginTop="10dp" app:layout_constraintTop_toBottomOf="@+id/equipmentSlotLabel"/>
             <TextView
                     android:layout_width="wrap_content"
+                    android:fontFamily="@font/cagliostro_font"
                     android:layout_height="wrap_content" android:id="@+id/equipmentSlotTextView"
                     app:layout_constraintStart_toEndOf="@+id/equipmentSlotLabel"
                     app:layout_constraintTop_toTopOf="parent" android:layout_marginStart="10dp"
                     android:layout_marginTop="40dp"/>
             <TextView
+                    android:fontFamily="@font/cagliostro_font"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content" android:id="@+id/equipmentLevelTextView"
                     app:layout_constraintStart_toEndOf="@+id/equipmentLevelLabel"
@@ -51,11 +56,13 @@
             />
             <TextView
                     android:text="Attributes:"
+                    android:fontFamily="@font/cagliostro_font"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content" android:id="@+id/equipmentAttributesLabel"
                     app:layout_constraintEnd_toEndOf="parent" app:layout_constraintTop_toTopOf="parent"
                     android:layout_marginTop="40dp" android:layout_marginEnd="16dp"/>
             <TextView
+                    android:fontFamily="@font/cagliostro_font"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content" android:id="@+id/equipmentAttributesTextView"
                     app:layout_constraintBottom_toBottomOf="parent"
