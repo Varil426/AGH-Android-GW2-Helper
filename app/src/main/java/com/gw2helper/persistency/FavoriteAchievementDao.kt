@@ -1,9 +1,6 @@
 package com.gw2helper.persistency
 
-import androidx.room.Dao
-import androidx.room.Delete
-import androidx.room.Insert
-import androidx.room.Query
+import androidx.room.*
 
 @Dao
 interface FavoriteAchievementDao {
@@ -21,4 +18,7 @@ interface FavoriteAchievementDao {
 
     @Delete
     fun delete(favoriteAchievement: FavoriteAchievement)
+
+    @Update
+    fun updateFavoriteAchievement(updatedFavoriteAchievement: FavoriteAchievement)
 }

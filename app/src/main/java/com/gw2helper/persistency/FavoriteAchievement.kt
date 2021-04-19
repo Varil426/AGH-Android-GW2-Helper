@@ -7,5 +7,5 @@ import androidx.room.PrimaryKey
 @Entity
 data class FavoriteAchievement(
     @PrimaryKey val id: String,
-    var isFavorite: Boolean
+    var isFavorite: Boolean = false
 )

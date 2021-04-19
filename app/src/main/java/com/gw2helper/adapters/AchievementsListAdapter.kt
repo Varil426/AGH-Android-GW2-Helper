@@ -43,23 +43,13 @@ class AchievementsListAdapter(private val context: Context, private val listOfAc
         holder.progressBar.progress = currentAchievement.currentProgress
 
         holder.favoriteCheckBox.setOnCheckedChangeListener {_, value -> updateFavoriteAchievementValue(currentAchievement, value)}
-        holder.favoriteCheckBox.isChecked = PersistedData.favoriteAchievements.find { persisted -> persisted.id == currentAchievement.id }?.isFavorite ?: false
+        holder.favoriteCheckBox.isChecked = currentAchievement.favoriteAchievement.isFavorite
     }
 
     private fun updateFavoriteAchievementValue(currentAchievement: Achievement, value: Boolean) {
-        val persistedFavoriteAchievement = PersistedData.favoriteAchievements.find { persisted -> persisted.id == currentAchievement.id }
-        if (persistedFavoriteAchievement != null) {
-            persistedFavoriteAchievement.isFavorite = value
-        } else {
-            thread {
-                val persistedAchievement = PersistedData.database.favoriteAchievementsDao().findById(currentAchievement.id)
-                if (persistedAchievement != null) {
-                    persistedAchievement.isFavorite = value
-                    PersistedData.refreshPersistedData()
-                } else {
-                    PersistedData.database.favoriteAchievementsDao().insertAll(FavoriteAchievement(currentAchievement.id, value))
-                }
-            }
+        currentAchievement.favoriteAchievement.isFavorite = value
+        thread {
+            PersistedData.database.favoriteAchievementsDao().updateFavoriteAchievement(currentAchievement.favoriteAchievement)
         }
     }
 
@@ -71,7 +61,7 @@ class AchievementsListAdapter(private val context: Context, private val listOfAc
         if (onlyFavorites) {
             fullListOfAchievements = listOfAchievements.toMutableList()
             listOfAchievements.clear()
-            listOfAchievements.addAll(fullListOfAchievements.filter { achievement -> PersistedData.favoriteAchievements.find { persistent -> persistent.id == achievement.id }?.isFavorite ?: false })
+            listOfAchievements.addAll(fullListOfAchievements.filter { achievement -> achievement.favoriteAchievement.isFavorite })
         } else {
             listOfAchievements.clear()
             listOfAchievements.addAll(fullListOfAchievements)
