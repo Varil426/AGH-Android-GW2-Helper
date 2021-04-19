@@ -31,7 +31,6 @@ class CharactersFragment : Fragment(R.layout.fragment_characters_screen) {
         charactersRecyclerView.adapter = CharactersListAdapter(activity!!, listOfCharacters)
         charactersRecyclerView.layoutManager = LinearLayoutManager(activity!!)
 
-
         getCharactersListRequest()
     }
 

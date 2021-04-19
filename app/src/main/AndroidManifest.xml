@@ -12,15 +12,17 @@
             android:roundIcon="@mipmap/ic_launcher_round"
             android:supportsRtl="true"
             android:theme="@style/Theme.GW2Helper">
+        <activity android:name=".CharacterEquipmentActivity">
+        </activity>
         <activity
                 android:name=".MainTabbedActivity"
                 android:label="@string/title_activity_main_tabbed"
-                android:theme="@style/Theme.GW2Helper.NoActionBar"
-                android:screenOrientation="portrait">
+                android:screenOrientation="portrait"
+                android:theme="@style/Theme.GW2Helper.NoActionBar">
         </activity>
         <activity
-            android:name=".LauncherActivity"
-            android:screenOrientation="portrait">
+                android:name=".LauncherActivity"
+                android:screenOrientation="portrait">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN"/>
 
