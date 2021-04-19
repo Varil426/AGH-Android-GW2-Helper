@@ -20,7 +20,6 @@ class AccountFragment : Fragment(R.layout.fragment_account_screen) {
     private lateinit var ageTextView: TextView
     private lateinit var fractalLevelTextView: TextView
     private lateinit var wvwLevelTextView: TextView
-    private lateinit var guildsTextView: TextView
     private lateinit var logOutButton: Button
 
     private lateinit var account: Account
@@ -32,8 +31,6 @@ class AccountFragment : Fragment(R.layout.fragment_account_screen) {
         ageTextView = view.findViewById(R.id.age_text_view)
         fractalLevelTextView = view.findViewById(R.id.fractal_level_text_view)
         wvwLevelTextView = view.findViewById(R.id.wvw_level_text_view)
-        guildsTextView = view.findViewById(R.id.guilds_text_view)
-        //guildsTextView.movementMethod = ScrollingMovementMethod()
         logOutButton = view.findViewById(R.id.logout_button)
 
         logOutButton.setOnClickListener { _ -> ApiHelper.forgetSharedPreferences(context!!) }
@@ -65,18 +62,12 @@ class AccountFragment : Fragment(R.layout.fragment_account_screen) {
             access.add(accessArray[index].toString())
         }
 
-        val guildsArray = response.getJSONArray("guilds")
-        val guilds = mutableListOf<String>()
-        for (index in 0 until guildsArray.length()) {
-            guilds.add(guildsArray[index].toString())
-        }
 
         val fractalLevel = response.getInt("fractal_level")
         val wvw_level = response.getInt("wvw_rank")
-        account = Account(name, age, worldId, guilds, access, fractalLevel, wvw_level)
+        account = Account(name, age, worldId, access, fractalLevel, wvw_level)
 
         // TODO
-        //getGuildsNamesRequest()
         //getWorldNameRequest()
 
         nameTextView.text = account.name
@@ -84,5 +75,6 @@ class AccountFragment : Fragment(R.layout.fragment_account_screen) {
         fractalLevelTextView.text = account.fractalLevel.toString()
         wvwLevelTextView.text = account.wvwRank.toString()
     }
+
 
 }
