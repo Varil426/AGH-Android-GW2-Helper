@@ -30,6 +30,10 @@ class MainTabbedActivity : InternetActivity() {
 
     }
 
+    override fun onBackPressed() {
+        ToastsHelper.makeToast("Use LOG OUT button", applicationContext)
+    }
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main_tabbed)
